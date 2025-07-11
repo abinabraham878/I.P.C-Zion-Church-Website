@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zion Church I.P.C</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        integrity="sha512-..." crossorigin="anonymous" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    container: {
+                        center: true,
+                        padding: '1rem',
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .letter {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s ease-out forwards;
+        }
+
+
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Initially hide the Zion heading */
+        #zion.visible {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-800 bg-white">
+
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center py-4 px-4">
+            <div class="flex items-center space-x-4">
+                <!-- Logo 1 -->
+                <img src="./ipc-logo-bg-white.png" alt="IPC Logo" class="h-14 w-auto object-contain" />
+                <!-- Divider -->
+                <div class="h-10 border-l border-gray-400"></div>
+                <!-- Logo 2 -->
+                <img src="./zion-church-logo.png" alt="Zion Logo" class="h-14 w-auto object-contain" />
+                <!-- Title -->
+                <span class="text-2xl font-bold ml-3 text-gray-800">I.P.C Zion Church</span>
+            </div>
+
+            <!-- Desktop Menu -->
+            <ul class="hidden md:flex space-x-6 text-sm font-semibold">
+                <li><a href="#home" class="text-green-600">Home</a></li>
+                <li><a href="#aboutUs">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+            </ul>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-4 pb-4">
+            <ul class="space-y-2 text-sm font-semibold">
+                <li><a href="#home" class="block text-green-600">Home</a></li>
+                <li><a href="#aboutUs" class="block">About Us</a></li>
+                <li><a href="#churches" class="block">Our Churches</a></li>
+                <li><a href="#contact" class="block">Contact</a></li>
+                <li><a href="#leadership" class="block">Leadership</a></li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Hero Section -->
+    <!-- <section id="home" class="relative h-[130vh] bg-cover bg-center text-white flex items-center justify-center"
+        style="background-image: url('./page-main-banner.jpeg');">
+        <div class="bg-black bg-opacity-50 absolute inset-0"></div>
+        <div class="relative z-10 text-center px-4">
+            <h1 id="welcome" class="text-3xl sm:text-4xl md:text-5xl font-bold">Welcome to</h1>
+            <h1 id="zion" class="text-4xl sm:text-5xl md:text-6xl font-extrabold mt-2 opacity-0">Zion I.P.C</h1>
+        </div>
+    </section> -->
+
+    <section id="home" class="relative min-h-screen bg-cover bg-center text-white flex items-center justify-center"
+        style="background-image: url('./page-main-banner.jpeg');">
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 sm:px-6 md:px-8 max-w-3xl w-full">
+            <div id="welcome" data-text="Welcome to"
+                class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight break-words"></div>
+            <div id="zion" data-text="I.P.C Zion"
+                class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mt-3 opacity-0 leading-tight break-words">
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- About Section (Short) -->
+    <section class="py-12 px-4 md:px-16 bg-gray-50">
+        <div class="flex flex-col md:flex-row gap-6 items-center">
+            <img src="./pastors-group-pic.png" alt="Church" class="w-full md:w-1/2 rounded shadow" />
+            <div class="md:w-1/2">
+                <h2 class="text-2xl font-semibold mb-4">Welcome to I.P.C Germany </h2>
+                <p class="text-gray-700 leading-relaxed">
+                    We welcome you to the website of the Indian Pentecostal Church of God (IPC) Germany. We are glad
+                    that you are here. Please take your time through our website to know more about us and the
+                    ministries God is
+                    enabling us to do in Germany and other parts of Europe.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ministries Section -->
+    <section class="py-12 px-4 text-center bg-white">
+        <h2 class="text-2xl font-semibold mb-6">Our Ministries</h2>
+        <div class="flex flex-wrap justify-center gap-4">
+            <span class="bg-green-500 text-white px-5 py-2 rounded-full shadow">PYPA</span>
+            <span class="bg-pink-500 text-white px-5 py-2 rounded-full shadow">Sunday School</span>
+            <!-- <span class="bg-yellow-500 text-white px-5 py-2 rounded-full shadow">Evangelism Board</span>
+            <span class="bg-teal-600 text-white px-5 py-2 rounded-full shadow">Ladies Ministry</span> -->
+        </div>
+    </section>
+
+    <!-- Embedded YouTube Video -->
+    <!-- <section class="px-4 pb-12 text-center"> -->
+    <!-- <h2 class="text-2xl font-semibold mb-4">Latest Convention</h2> -->
+    <!-- <div class="aspect-w-16 aspect-h-9 mx-auto max-w-3xl"> -->
+    <!-- <iframe class="w-full h-64 sm:h-96" src="https://www.youtube.com/embed/5qap5aO4i9A" title="YouTube Video"
+                allowfullscreen></iframe> -->
+    <!-- <img src="./zion-church-logo.png" alt="Church"
+                class="w-full h-64 sm:h-96" /> -->
+    <!-- </div>
+    </section> -->
+
+    <!-- About Us Section -->
+    <section id="aboutUs" class="px-4 pb-12 text-center">
+        <!-- Centered Image -->
+        <div class="aspect-w-16 aspect-h-9 mx-auto max-w-3xl">
+            <img src="./logo1.png" alt="Church" class="block mx-auto w-full sm:h-96 object-contain" />
+        </div>
+
+        <!-- Content -->
+        <div class="max-w-4xl mx-auto mt-8 px-4 text-left">
+            <h2 class="text-2xl font-bold text-center text-green-700 mb-4">
+                Welcome to I.P.C Zion Church at Leipzig
+            </h2>
+            <p class="italic font-semibold text-lg mb-4">
+                “Those who trust in the Lord are like Mount Zion, which cannot be shaken but endures forever.” — Psalm
+                125:1
+            </p>
+            <p class="mb-4">
+                At Zion I.P.C, we believe in being set apart—just as Mount Zion stands immovable, so too does the
+                dwelling place of God remain steadfast and holy.
+                God does not dwell in just any place; His presence fills a sanctuary that is distinct from the world,
+                where His grace shines brightly.
+            </p>
+            <p class="mb-4">
+                We are a Christ-centered community devoted to true worship. But what is true worship? It goes beyond
+                singing songs or clapping hands on a Sunday.
+                True worship is the daily offering of our lives—presenting ourselves as living sacrifices, holy and
+                pleasing to God.
+            </p>
+            <p class="mb-4">
+                With this heart and vision, we have begun a new chapter by planting Zion I.P.C in Leipzig. Our mission
+                is simple yet profound:
+                to proclaim the Good News of the crucified and risen Christ, to be a light in this city, and to build a
+                community rooted in faith, love, and truth.
+            </p>
+            <p class="font-semibold text-center">
+                This is just the beginning. We believe greater things are yet to come!
+            </p>
+        </div>
+    </section>
+
+
+    <section class="py-20 px-6 md:px-16 bg-gradient-to-b from-white to-green-50 text-gray-800">
+        <div class="max-w-4xl mx-auto relative">
+            <!-- Vertical Line -->
+            <div class="absolute left-5 top-0 bottom-0 w-1 bg-green-300"></div>
+
+            <!-- Timeline Item -->
+            <div class="mb-16 pl-16 relative">
+                <div
+                    class="absolute left-0 top-0 w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white">
+                    <i class="fas fa-church"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-green-800 mb-2">What is Church?</h2>
+                <p class="text-gray-700 text-lg leading-relaxed mb-3">
+                    Church is not a building—it’s a living, breathing community of believers. A family bonded by faith,
+                    grounded in grace, and driven by love.
+                </p>
+                <blockquote class="border-l-4 border-green-500 pl-5 italic text-green-700">
+                    “Now you are the body of Christ, and each one of you is a part of it.”
+                    <br />
+                    <span class="text-sm text-gray-600">— 1 Corinthians 12:27</span>
+                </blockquote>
+            </div>
+
+            <!-- Timeline Item -->
+            <div class="mb-16 pl-16 relative">
+                <div
+                    class="absolute left-0 top-1 w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white">
+                    <i class="fas fa-cross"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-green-800 mb-2">The Purpose of the Church</h2>
+                <p class="text-gray-700 text-lg leading-relaxed mb-3">
+                    The Church glorifies God, proclaims salvation, and nurtures believers. It’s a place of hope and
+                    transformation.
+                </p>
+                <blockquote class="border-l-4 border-green-500 pl-5 italic text-green-700">
+                    “Go into all the world and preach the gospel to all creation.”
+                    <br />
+                    <span class="text-sm text-gray-600">— Mark 16:15</span>
+                </blockquote>
+            </div>
+
+            <!-- Timeline Item -->
+            <div class="mb-16 pl-16 relative">
+                <div
+                    class="absolute left-0 top-1 w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-green-800 mb-2">The Ministries of the Church</h2>
+                <p class="text-gray-700 text-lg leading-relaxed mb-3">
+                    Through ministries that care for the needy and support families, the Church shares God’s love beyond
+                    its walls.
+                </p>
+                <blockquote class="border-l-4 border-green-500 pl-5 italic text-green-700">
+                    “Each of you should use whatever gift you have received to serve others...”
+                    <br />
+                    <span class="text-sm text-gray-600">— 1 Peter 4:10</span>
+                </blockquote>
+            </div>
+
+            <!-- Timeline Item -->
+            <div class="pl-16 relative">
+                <div
+                    class="absolute left-0 top-1 w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white">
+                    <i class="fas fa-people-arrows"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-green-800 mb-2">The Power of Fellowship</h2>
+                <p class="text-gray-700 text-lg leading-relaxed mb-3">
+                    Fellowship strengthens faith, fosters unity, and reflects Christ through shared worship and prayer.
+                </p>
+                <blockquote class="border-l-4 border-green-500 pl-5 italic text-green-700">
+                    “For where two or three gather in my name, there am I with them.”
+                    <br />
+                    <span class="text-sm text-gray-600">— Matthew 18:20</span>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <section id="leadership" class="py-16 px-4 bg-gradient-to-b from-purple-50 to-gray-100 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+            <!-- Title -->
+            <div class="mb-12">
+                <h2 class="text-4xl font-extrabold text-gray-900">Our Leadership</h2>
+                <p class="mt-2 text-lg text-gray-600">Meet the dedicated team leading our community</p>
+            </div>
+
+            <!-- Region Executives -->
+            <h3 class="text-3xl font-semibold text-purple-900 mb-10">Region Executives</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- President -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+                    <h4 class="text-lg font-semibold text-purple-900 mb-3">President</h4>
+                    <img src="./C.T-Abraham-_W_BG-1.jpg" alt="Pr. C.T. ABRAHAM"
+                        class="mx-auto w-28 h-40 object-cover rounded-lg mb-4">
+                    <p class="font-bold text-gray-800">Pr. C.T. ABRAHAM</p>
+                </div>
+
+                <!-- Vice President -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+                    <h4 class="text-lg font-semibold text-purple-900 mb-3">Vice President</h4>
+                    <img src="./Jiji-vp-ipc.jpg" alt="Pr. Jiji M Varughese"
+                        class="mx-auto w-28 h-40 object-cover rounded-lg mb-4">
+                    <p class="font-bold text-gray-800">Pr. Jiji M Varughese</p>
+                </div>
+
+                <!-- Secretary -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+                    <h4 class="text-lg font-semibold text-purple-900 mb-3">Secretary</h4>
+                    <img src="./Sanu-sc-ipc.jpg" alt="Pr. Sanu P Mathew"
+                        class="mx-auto w-28 h-40 object-cover rounded-lg mb-4">
+                    <p class="font-bold text-gray-800">Pr. Sanu P Mathew</p>
+                </div>
+
+                <!-- Joint Secretary -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+                    <h4 class="text-lg font-semibold text-purple-900 mb-3">Joint Secretary</h4>
+                    <img src="./Shine-jsc-ipc.jpg" alt="Pr. Shine Mathew"
+                        class="mx-auto w-28 h-40 object-cover rounded-lg mb-4">
+                    <p class="font-bold text-gray-800">Pr. Shine Mathew</p>
+                </div>
+            </div>
+
+            <!-- Church Leaders -->
+            <h3 class="text-3xl font-semibold text-purple-900 mt-16 mb-10">Church Leaders</h3>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                <!-- Leader 1 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+                    <img src="./Benson.jpeg" alt="Evg. Benson Babu"
+                        class="mx-auto w-28 h-40 object-cover rounded-lg mb-4">
+                    <p class="font-bold text-gray-800">Evg. Benson Babu</p>
+                </div>
+
+                <!-- Leader 2 -->
+                <div
+                    class="bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transform hover:-translate-y-2 transition duration-300">
+                    <img src="./Abimon.jpeg" alt="Evg. Abimon Bhasi"
+                        class="mx-auto w-28 h-40 object-cover rounded-lg mb-4">
+                    <p class="font-bold text-gray-800">Evg. Abimon Bhasi</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="py-16 px-4 bg-gradient-to-b from-green-50 to-white text-center">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-green-700 mb-4">Contact Us</h2>
+            <p class="text-gray-600 mb-12">We’d love to hear from you. Reach out to us anytime!</p>
+
+            <div class="flex flex-col md:flex-row md:justify-center md:space-x-8 space-y-8 md:space-y-0">
+
+                <!-- Address -->
+                <div
+                    class="max-w-sm bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="text-green-600 mb-4 text-3xl">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Address</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        <a href="https://maps.app.goo.gl/CTuExF8q8Hdfh9vg6" target="_blank"
+                            class="hover:text-green-700 hover:underline">
+                            Raum Lyon 318c<br />
+                            Pavillon der Hoffnung<br />
+                            Puschstraße 09<br />
+                            04103 Leipzig, Germany
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Email -->
+                <div
+                    class="max-w-sm bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="text-green-600 mb-4 text-3xl">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Email</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        <a href="mailto:zion.leipzig@gmail.com" class="text-green-700 hover:underline">
+                            zion.leipzig@gmail.com
+                        </a>
+                    </p>
+                </div>
+
+                <!-- Phone -->
+                <div
+                    class="max-w-sm bg-white rounded-2xl shadow-lg p-6 hover:shadow-2xl transition-shadow duration-300">
+                    <div class="text-green-600 mb-4 text-3xl">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Phone</h3>
+                    <p class="text-gray-600 leading-relaxed">
+                        <a href="tel:+4917623933021" class="text-green-700 hover:underline block">
+                            +49 176 23933021
+                        </a>
+                        <a href="tel:+4915755296500" class="text-green-700 hover:underline block mt-1">
+                            +49 1575 5296500
+                        </a>
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-white text-center py-6 text-sm">
+        <div class="flex flex-col md:flex-row justify-center items-center gap-4">
+            <span>© 2025 Zion I.P.C @ Leipzig. All rights reserved.</span>
+            <div class="flex gap-4">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook"
+                    class="hover:text-blue-500 transition">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/ipc_zion" target="_blank" aria-label="Instagram"
+                    class="hover:text-pink-500 transition">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.threads.com/@ipc_zion" target="_blank" aria-label="Threads"
+                    class="hover:text-white-500 transition">
+                    <i class="fa-brands fa-threads"></i>
+                </a>
+                <a href="https://youtube.com" target="_blank" aria-label="YouTube"
+                    class="hover:text-red-500 transition">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="mailto:zion.leipzig@gmail.com" aria-label="Email" class="hover:text-green-400 transition">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        // Toggle mobile menu
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        function animateText(id, callback) {
+            const element = document.getElementById(id);
+            const text = element.dataset.text;
+            element.textContent = '';
+
+            element.classList.add('visible');
+
+            text.split('').forEach((char, i) => {
+                const span = document.createElement('span');
+                span.textContent = char === ' ' ? '\u00A0' : char;
+                span.classList.add('letter', 'text-3xl', 'sm:text-4xl', 'md:text-5xl', 'lg:text-6xl', 'font-extrabold');
+                span.style.animationDelay = `${i * 0.05}s`;
+                element.appendChild(span);
+            });
+
+            const totalDuration = (text.length - 1) * 0.05 + 0.6;
+            if (callback) {
+                setTimeout(callback, totalDuration * 1000);
+            }
+        }
+
+
+        // Animate welcome first, then Zion (which is initially hidden)
+        animateText('welcome', () => {
+            animateText('zion');
+        });
+
+
+    </script>
+</body>
+
+</html>
